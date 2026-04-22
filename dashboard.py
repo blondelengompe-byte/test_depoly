@@ -20,7 +20,7 @@ avg_age = np.mean(df['age'])
 count_married = int(df[df['marital'] == 'married']['marital'].count())
 balance = np.mean(df['balance'])
 
-kpi1,kpi2,kpi3 = st.colums(3)
+kpi1,kpi2,kpi3 = st.columns(3)
 kpi1.metric(label='Age', value = round(avg_age), delta = round(avg_age ))
 kpi2.metric(label='Married count', value = count_married ,delta = count_married)
 kpi3.metric(label='Balance $',value=f"{round(balance, 2)}",delta=-round(balance / count_married) * 100)
